@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './style.scss';
+import Topbar from './pages/Topbar';
+import Home from './pages/Home';
+import Hire from './pages/Hire';
+import Contact from './pages/Contact';
+import Footer from './pages/Footer';
+import ModalSuccess from './components/ModalSuccess';
+import Services from './pages/Services';
+import Projects from './pages/Projects';
+import Skills from './pages/Skills';
+import Faq from './pages/Faq';
+import ToTop from './pages/ToTop';
+import About from './pages/About';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Topbar />
+      <main>
+        <Home />
+        <About />
+        <Skills />  
+        <Services />
+        <Hire />
+        <Projects />
+        <Faq />
+        <Contact />
+      </main>
+      <ModalSuccess />
+      <ToTop />
+      <Footer />
     </div>
   );
 }
