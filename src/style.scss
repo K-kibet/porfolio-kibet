@@ -3,25 +3,27 @@
 
 
 $white: #ffffff;
-$light: #e5e5e5 #d4d3d3;
+$light: #e3edf7 ;
     
 $dark :  #282727;
 
-$link_blue:#1cbcd2;
+$link_blue: #4c86d8;
 $light-blue: #03b5d2;
 
 $grey: #7c7f8f;
-$light-grey:#c2c2c2;
+$light-grey:#c9c9c9;
 $dark-grey: #7288a2;
 
-$green: #00A625;
+$green: #00AE58;
 $light-green: #89e97c;
-$dark-green: #05230a;
+$dark-green: #121;
+
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -95,20 +97,9 @@ html {
     -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.63);
     background: $white;
 
-    i{
-      width: 25px;
-      height: 25px;
-      color: $dark;
+    .close{
       cursor: pointer;
-      border-radius: 50%;
       display: none;
-      align-items: center;
-      justify-content: center;
-
-      &:hover{
-        background: $grey;
-      }
-
       @media screen and (max-width: 924px){
         display: flex;
       }
@@ -683,9 +674,9 @@ html {
 
   /*modal success*/
   .modal{
-    width: 300px;
+    width: 320px;
     height: 250px;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -729,40 +720,10 @@ html {
         font-size: 20px;
         font-weight: 500;
         letter-spacing: 3px;
-        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
-  
     }
-  
-  
-    .bottom{
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-  }
-
-  /* to top */
-  .to-topBtn{
-    width: 50px;
-    height: 40px;
-    position: fixed;
-    bottom: 70px;
-    right: 10px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    color: $green;
-    border-radius: 50%;
-    font-size: 26px;
-    border: 1px solid $green;
-    cursor: pointer;
   }
 }
 
@@ -775,84 +736,56 @@ html {
     @media screen and (max-width: 924px){
       overflow: auto;
     }
-    .wrapper{
-      .accordion-item {
-        border-bottom: 1px solid $light;
-        .accordion-title {
-          padding: 1em 1.5em 1em 0;
-          margin-left: 40px;
-        }
-  
-        button {
-          position: relative;
-          display: block;
-          text-align: left;
+    .accordion{
+      margin: 10px auto;
+      width: 100%;
+      padding: 5px;
+      li {
+        list-style: none;
+        width: 100%;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        background: $white;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+        .title{
+          display: flex;
           width: 100%;
-          padding: 1em 0;
-          color: $dark-grey;
-          font-size: 1.15rem;
-          font-weight: 400;
-          border: none;
-          background: none;
-          outline: none;
-      
-          &:hover, &:focus {
-            cursor: pointer;
-            color: $light-blue;
-      
-            &::after {
-              cursor: pointer;
-              color: $light-blue;
-              border: 1px solid $light-blue;
-            }
-          }
-      
-      
-      
-          .icon {
-            display: inline-block;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+          padding: 1em 1.2em 1em 0;
+
+
+          input[type="radio"]{
+            width: 100%;
+            height: 100%;
+            opacity: 0;
             position: absolute;
-            top: 18px;
-            right: 0;
-            width: 22px;
-            height: 22px;
-            border: 1px solid;
-            border-radius: 22px;
-      
-            &::before {
-              display: block;
-              position: absolute;
-              content: "";
-              top: 9px;
-              left: 5px;
-              width: 10px;
-              height: 2px;
-              background: currentColor;
-            }
+            z-index: 2;
           }
-      
-          &[aria-expanded=true] {
-            color: $light-blue;
-      
-            &+ .accordion-content {
-              opacity: 1;
-              max-height: 9em;
-              transition: all 200ms linear;
-              will-change: opacity, max-height;
-            }
+          label{
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
           }
+        }
+        .content{
+          color: $dark;
+          padding: 0 10px;
+          line-height: 26px;
+          overflow: hidden;
+          transition: max-height 0.5s, padding 0.5s;
         }
   
-        .accordion-content {
-          p {
-            font-size: 1rem;
-            font-weight: 300;
-            margin: 2em 0;
-          }
-        }
       }
     }
-  }
+}
 
 
   /*background specification*/
@@ -892,25 +825,14 @@ html {
   animation: html-fill 2s forwards;
 }
 
-.linux{
-  background-color: ghostwhite;
-  animation: html-fill 2s forwards;
-  color: black;
-}
-
 .java{
   background-color: rgb(228, 100, 9);
-  animation: html-fill 2s forwards;
+  animation: python-fill 2s forwards;
 }
 
 .jquery{
   background-color: #1946c4;
-  animation: html-fill 2s forwards;
-}
-
-.python{
-  background-color: #2678c5;
-  animation: python-fill 2s forwards;
+  animation: node-fill 2s forwards;
 }
 
 .nodejs{
@@ -918,19 +840,9 @@ html {
   animation: node-fill 2s forwards;
 }
 
-.mysql{
-  background-color: #eff15d;
-  animation: go-fill 2s forwards;
-}
-
 .material_ui{
   background-color: #20005a;
-  animation: php-fill 2s forwards;
-}
-
-.electron{
-  background-color: rgb(90, 65, 90);
-  animation: graph-fill 2s forwards;
+  animation: node-fill 2s forwards;
 }
 
 .ui-ux-design{
@@ -949,73 +861,8 @@ html {
   }
 }
 
-@keyframes go-fill {
-  100% {
-      width: 40%;
-  }
-}
-
-@keyframes php-fill {
-  100% {
-      width: 50%;
-  }
-}
-
-@keyframes graph-fill {
-  100% {
-      width: 30%;
-  }
-}
-
 @keyframes python-fill {
   100% {
-      width: 80%;
-  }
-}
-
-@keyframes shake {
-  
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-
-  10% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-
-  20% {
-    transform: translate(-3px, 0px) rotate(0deg);
-  }
-
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-
-  60% {
-    transform: translate(3px, 1px) rotate(0deg);
-  }
-
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+      width: 70%;
   }
 }

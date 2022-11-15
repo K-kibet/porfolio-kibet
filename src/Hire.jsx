@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../assets/desk.png';
+import Image from './assets/desk.png';
 
 export default function Hire() {
   return (

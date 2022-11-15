@@ -1,6 +1,6 @@
 import React from 'react';
-import Skill from '../components/Skill';
-import { skills } from '../data';
+import Skill from './Skill';
+import { skills } from './data';
 
 const Skills = () => {
     return (

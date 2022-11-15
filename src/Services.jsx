@@ -1,6 +1,6 @@
 import React from 'react'
-import Service from '../components/Service';
-import { services } from '../data';
+import Service from './Service';
+import { services } from './data';
 
 export default function Services() {
   return (

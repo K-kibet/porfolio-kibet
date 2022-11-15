@@ -1,12 +1,11 @@
-import { ExpandMore } from '@mui/icons-material';
+import { Menu } from '@mui/icons-material';
 import React from 'react';
-import Logo from '../assets/logo.png';
+import Logo from './assets/logo.png';
 
 export default function Topbar() {
   return (
-   <header className="header">
-    <i className="fa fa-bars openBtn" ></i>
-    <ExpandMore />
+   <header className="header openBtn">
+    <Menu className='close'/>
     <img src={Logo} alt="" className="logo" />
     <nav className="topNav">
         <a href="#home" className="toplink active">Home</a>

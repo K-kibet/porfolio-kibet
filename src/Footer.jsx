@@ -12,7 +12,7 @@ export default function Footer() {
         <a href="https://www.instagram.com/ancientpupy" target="_blank"><Instagram /></a>
         <a href="https://www.linkedin.com/in/kibetkorir" target="_blank"><LinkedIn /></a>
         <a href="https://github.com/K-kibet/" target="_blank"><GitHub /></a>
-        <a href="https://youtube.com/k-kibet" target="_blank"><YouTube /></a>
+        <a href="https://www.youtube.com/@codespear" target="_blank"><YouTube /></a>
         </div>
       </section>
       <div>

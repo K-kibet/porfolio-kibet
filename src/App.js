@@ -1,19 +1,19 @@
 import './style.scss';
-import Topbar from './pages/Topbar';
-import Home from './pages/Home';
-import Hire from './pages/Hire';
-import Contact from './pages/Contact';
-import Footer from './pages/Footer';
-import ModalSuccess from './components/ModalSuccess';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
-import Skills from './pages/Skills';
-import Faq from './pages/Faq';
-import ToTop from './pages/ToTop';
-import About from './pages/About';
+import Topbar from './Topbar';
+import Home from './Home';
+import Hire from './Hire';
+import Contact from './Contact';
+import Footer from './Footer';
+import ModalSuccess from './ModalSuccess';
+import Services from './Services';
+import Projects from './Projects';
+import Skills from './Skills';
+import Faq from './Faq';
+import About from './About';
 function App() {
   return (
     <div className="App">
+      
       <Topbar />
       <main>
         <Home />
@@ -26,7 +26,6 @@ function App() {
         <Contact />
       </main>
       <ModalSuccess />
-      <ToTop />
       <Footer />
     </div>
   );
